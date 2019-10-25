@@ -8,13 +8,13 @@ View an [html table](http://www.shauritahutchins.com/nba-draft-combine-anthro/) 
 
 Coming soon.
 
-## Thanks
-
-Thanks to [@derekeder](https://github.com/derekeder) for his tool, [csv-to-html-table](https://github.com/derekeder/csv-to-html-table).
-
 ## Issues
 
 If you're experiencing any difficulties, please [create an issue](https://github.com/sdhutchins/nba-draft-combine-anthro/issues/new).
+
+## Thanks
+
+Thanks to [@derekeder](https://github.com/derekeder) for his tool, [csv-to-html-table](https://github.com/derekeder/csv-to-html-table).
 
 ## Author
 
