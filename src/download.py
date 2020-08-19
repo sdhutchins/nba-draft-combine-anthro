@@ -34,8 +34,8 @@ for year in years:
 
 all_data = pd.concat(dfs)
 
-cols_to_remove = ['TEMP_PLAYER_ID', 'PLAYER_NAME', 'HEIGHT_WO_SHOES', 'HEIGHT_W_SHOES',
-                  'WINGSPAN', 'STANDING_REACH']
+cols_to_remove = ['TEMP_PLAYER_ID', 'PLAYER_NAME', 'HEIGHT_WO_SHOES',
+                  'HEIGHT_W_SHOES', 'WINGSPAN', 'STANDING_REACH']
 
 all_data = all_data.drop(cols_to_remove, axis=1)
 
