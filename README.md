@@ -2,8 +2,10 @@
 
 View all of the NBA's combine anthro data in one place as well as (work in progress) create your own database of that data.
 
-View an [html table](http://www.shauritahutchins.com/nba-draft-combine-anthro/) of the combine data.
+View an [html table](http://www.shauritahutchins.com/nba-draft-combine-anthro/) of the combine data.  
 
+Example from the website:
+![website_example](images/website_example.png)
 ## How-To
 
 Coming soon.
