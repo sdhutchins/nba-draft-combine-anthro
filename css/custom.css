@@ -1,105 +1,320 @@
-/* Custom styles */
-/*
-DePaul IHS
-*/
-
-@font-face {
-    font-family: 'GibsonSemiBold';
-    src: url('/css/fonts/gibson-semibold-webfont.eot');
-    src: url('/css/fonts/gibson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/css/fonts/gibson-semibold-webfont.woff') format('woff'),
-         url('/css/fonts/gibson-semibold-webfont.ttf') format('truetype'),
-         url('/css/fonts/gibson-semibold-webfont.svg#GibsonSemiBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GibsonBold';
-    src: url('/css/fonts/gibson-bold-webfont.eot');
-    src: url('/css/fonts/gibson-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/css/fonts/gibson-bold-webfont.woff') format('woff'),
-         url('/css/fonts/gibson-bold-webfont.ttf') format('truetype'),
-         url('/css/fonts/gibson-bold-webfont.svg#GibsonBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ColaborateThinRegular';
-    src: url('/css/fonts/ColabThi-webfont.eot');
-    src: url('/css/fonts/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/css/fonts/ColabThi-webfont.woff') format('woff'),
-         url('/css/fonts/ColabThi-webfont.ttf') format('truetype'),
-         url('/css/fonts/ColabThi-webfont.svg#ColaborateThinRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ColaborateRegRegular';
-    src: url('http://www.housingstudies.org/static/css/fonts/ColabReg-webfont.eot');
-    src: url('http://www.housingstudies.org/static/css/fonts/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
-         url('http://www.housingstudies.org/static/css/fonts/ColabReg-webfont.woff') format('woff'),
-         url('http://www.housingstudies.org/static/css/fonts/ColabReg-webfont.ttf') format('truetype'),
-         url('http://www.housingstudies.org/static/css/fonts/ColabReg-webfont.svg#ColaborateRegRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: 'AlegreyaBold';
-    src: url('http://www.housingstudies.org/static/css/fonts/Alegreya-Bold-webfont.eot');
-    src: url('http://www.housingstudies.org/static/css/fonts/Alegreya-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('http://www.housingstudies.org/static/css/fonts/Alegreya-Bold-webfont.woff') format('woff'),
-         url('http://www.housingstudies.org/static/css/fonts/Alegreya-Bold-webfont.ttf') format('truetype'),
-         url('http://www.housingstudies.org/static/css/fonts/Alegreya-Bold-webfont.svg#AlegreyaBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+:root {
+    --site-black: #000000;
+    --site-border: #d1d0d0;
+    --site-mauve: #988686;
+    --site-taupe: #5c4e4e;
+    --site-muted: #f7f6f6;
+    --site-white: #ffffff;
+    --font-family-body: "Fira Sans", sans-serif;
 }
 
-    
-body { 
-  font: 18px/1.3em 'ColaborateThinRegular', sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-h1 {
-  font: 32px/1em 'GibsonBold', serif;
-  text-transform: uppercase;
-  color: #827E7E;
+html,
+body {
+    background: var(--site-white);
+    color: var(--site-taupe);
+    font-family: var(--font-family-body);
+    margin: 0;
+    min-width: 320px;
 }
 
-h2 {
-  font: 22px/1em 'GibsonBold', serif;
-  text-transform: uppercase;
-  color: #827E7E;
+body {
+    overflow-x: hidden;
 }
 
-#logo {
-  margin-top: 20px;
+.page-header a,
+.site-footer a {
+    color: var(--site-taupe);
+    text-decoration-color: var(--site-mauve);
+    text-underline-offset: 3px;
 }
 
-#logo img { width: 170px; }
-
-.info {
-  padding: 6px 8px;
-  font: 14px/16px Arial, Helvetica, sans-serif;
-  background: white;
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
-}
-.info h4 {
-  margin: 0 0 5px;
-  color: #777;
+.page-header a:hover,
+.page-header a:focus-visible,
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--site-black);
 }
 
-.legend {
-  text-align: left;
-  line-height: 18px;
-  color: #555;
+#root:empty::after {
+    color: var(--site-mauve);
+    content: "Loading combine data...";
+    display: block;
+    padding: 32px;
 }
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
+
+.site-shell,
+.site-footer {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+}
+
+.page-header {
+    align-items: flex-start;
+    border-bottom: 1px solid var(--site-border);
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    padding: 36px 0 28px;
+}
+
+.page-header h1 {
+    color: var(--site-black);
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 12px;
+}
+
+.page-header p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 780px;
+}
+
+.author-link {
+    flex: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.table-surface {
+    border: 1px solid var(--site-border);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(92, 78, 78, 0.08);
+    margin-top: 28px;
+    overflow: hidden;
+}
+
+.table-heading {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 18px;
+}
+
+.table-heading h2 {
+    color: var(--site-black);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 4px;
+}
+
+.table-heading p {
+    color: var(--site-mauve);
+    font-size: 13px;
+    margin: 0;
+}
+
+.filter-toolbar {
+    align-items: center;
+    background: var(--site-muted);
+    border-bottom: 1px solid var(--site-border);
+    border-top: 1px solid var(--site-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 18px;
+}
+
+.search-control {
+    flex: 0 1 260px;
+    min-width: 210px;
+}
+
+.toolbar-spacer {
+    flex: 1 1 24px;
+}
+
+.result-count {
+    color: var(--site-taupe);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.active-filters {
+    align-items: center;
+    border-bottom: 1px solid var(--site-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 18px;
+}
+
+.range-panel {
+    padding: 4px;
+}
+
+.range-panel h2 {
+    color: var(--site-black);
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0 0 4px;
+}
+
+.range-panel > p {
+    color: var(--site-mauve);
+    font-size: 13px;
+    margin: 0 0 16px;
+}
+
+.range-grid {
+    display: grid;
+    gap: 14px 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 14px;
+}
+
+.range-actions {
+    border-top: 1px solid var(--site-border);
+    margin-top: 16px;
+    padding-top: 12px;
+}
+
+.table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table-scroll table {
+    min-width: 1225px;
+}
+
+.table-scroll thead th {
+    background: var(--site-muted);
+    color: var(--site-black);
+}
+
+.table-scroll tbody td {
+    color: var(--site-taupe);
+}
+
+.pagination-row {
+    align-items: center;
+    border-top: 1px solid var(--site-border);
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+    padding: 14px 18px;
+}
+
+.pagination-row > span {
+    color: var(--site-mauve);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.load-state {
+    align-items: center;
+    color: var(--site-mauve);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 260px;
+    padding: 32px;
+    text-align: center;
+}
+
+.load-state h2 {
+    color: var(--site-black);
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.load-state p {
+    margin: 0 0 16px;
+}
+
+.load-error {
+    background: #fff5f5;
+    color: #8c2f2f;
+}
+
+.site-footer {
+    color: var(--site-mauve);
+    font-size: 13px;
+    padding-bottom: 28px;
+    padding-top: 22px;
+    text-align: right;
+}
+
+.site-footer p {
+    border-top: 1px solid var(--site-border);
+    margin: 0;
+    padding-top: 18px;
+}
+
+@media (max-width: 900px) {
+    .toolbar-spacer {
+        display: none;
+    }
+
+    .result-count {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-shell,
+    .site-footer {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .page-header {
+        display: block;
+        padding: 24px 0 20px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .page-header p {
+        font-size: 16px;
+    }
+
+    .author-link {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .table-surface {
+        margin-top: 18px;
+    }
+
+    .table-heading,
+    .pagination-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filter-toolbar {
+        align-items: stretch;
+    }
+
+    .search-control {
+        flex-basis: 100%;
+        min-width: 100%;
+    }
+
+    .result-count {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .site-footer {
+        text-align: left;
+    }
 }

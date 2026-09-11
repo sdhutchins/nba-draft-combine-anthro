@@ -1,97 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta content="IE=edge" http-equiv="X-UA-Compatible">
         <meta content="width=device-width, initial-scale=1" name="viewport">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>NBA Combine Anthro Data</title>
         <meta content="MavenNBA" name="author">
-        <meta content="View NBA Combine Anthro Data"/>
+        <meta content="Explore and filter NBA Draft Combine anthropometric measurements from 2001 through 2026." name="description">
 
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/dataTables.bootstrap.css" rel="stylesheet">
-        <!-- Fontawesome kit -->
-        <script crossorigin="anonymous" src="https://kit.fontawesome.com/332c67398d.js"></script>
+        <link href="images/favicon.ico" rel="icon">
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@astryxdesign/core@0.6.0/src/reset.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@astryxdesign/core@0.6.0/dist/astryx.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@astryxdesign/theme-neutral@0.6.0/dist/theme.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-                                                                                                                                                            <!--[if lt IE 9]>
-      <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script type="text/javascript" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <script type="importmap">
+            {
+                "imports": {
+                    "react": "https://esm.sh/react@19.2.0",
+                    "react/jsx-runtime": "https://esm.sh/react@19.2.0/jsx-runtime",
+                    "react-dom": "https://esm.sh/react-dom@19.2.0",
+                    "react-dom/client": "https://esm.sh/react-dom@19.2.0/client",
+                    "htm": "https://esm.sh/htm@3.1.1",
+                    "@astryxdesign/core": "https://esm.sh/@astryxdesign/core@0.6.0?external=react,react-dom",
+                    "@astryxdesign/theme-neutral": "https://esm.sh/@astryxdesign/theme-neutral@0.6.0?external=react,react-dom"
+                }
+            }
+        </script>
     </head>
 
     <body>
-        <div class="container-fluid">
-
-            <div class="page-header">
-                <div class="container">
-                    <h1 class="display-4">NBA Combine Anthro Data</h1>
-                    <p class="lead">This table is a combination (2001-02 to 2019-20) of data from the
-                        <a href="https://stats.nba.com/draft/combine-anthro/">NBA's combine anthro</a>
-                        website.</p>
-                    <br>
-                    <p class="lead">Follow me on
-                        <i class="fab fa-twitter"></i>:
-                        <a href="https://twitter.com/mavennba">@MavenNBA</a>
-                    </p>
-                </div>
-            </div>
-
-            <div id="table-container"></div>
-
-        </div><!-- /.container -->
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <hr/>
-                <p class="pull-right">
-                    View the source code at
-                    <a href="https://github.com/sdhutchins/nba-draft-combine-anthro">
-                        <i class="fab fa-github"></i>
-                    </a>.
-                </p>
-            </div>
-        </footer>
-
-        <!-- Bootstrap core JavaScript
-    ================================================== -->
-                                                                                                                                                            <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jquery.csv.min.js" type="text/javascript"></script>
-        <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
-        <script src="js/dataTables.bootstrap.js" type="text/javascript"></script>
-        <script src="js/csv_to_html_table.js" type="text/javascript"></script>
-
-
-        <script type="text/javascript">
-            function format_link(link) {
-                if (link) 
-                    return "<a href='" + link + "' target='_blank'>" + link + "</a>";
-                 else 
-                    return "";
-                
-
-
-            }
-
-            CsvToHtmlTable.init({
-                csv_path: "data/anthro_data.csv",
-                element: "table-container",
-                allow_download: true,
-                csv_options: {
-                    separator: ",",
-                    delimiter: "\""
-                },
-                datatables_options: {
-                    "paging": false
-                },
-                custom_formatting: [
-                    [4, format_link]
-                ]
-            });
-        </script>
+        <div id="root"></div>
+        <noscript>This table requires JavaScript to load and filter the combine data.</noscript>
+        <script src="js/app.js" type="module"></script>
     </body>
 </html>
