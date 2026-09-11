@@ -1,7 +1,7 @@
 :root {
     --site-black: #000000;
     --site-border: #d1d0d0;
-    --site-mauve: #988686;
+    --site-mauve: #796969;
     --site-taupe: #5c4e4e;
     --site-muted: #f7f6f6;
     --site-white: #ffffff;
@@ -187,7 +187,7 @@ body {
     overflow-x: auto;
 }
 
-.table-scroll table {
+.table-width {
     min-width: 1225px;
 }
 
@@ -312,6 +312,10 @@ body {
     .result-count {
         margin-left: 0;
         width: 100%;
+    }
+
+    .range-grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .site-footer {

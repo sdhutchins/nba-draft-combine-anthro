@@ -698,7 +698,8 @@ function App() {
                         />
                         <${Popover}
                             label="Filters"
-                            width=${390}
+                            alignment="end"
+                            width="min(390px, calc(100vw - 32px))"
                             content=${html`
                                 <${Filters}
                                     heightRanges=${selectedHeightRanges}
@@ -765,17 +766,19 @@ function App() {
                     ` : null}
                     ${visibleRecords.length ? html`
                         <div className="table-scroll">
-                            <${Table}
-                                data=${visibleRecords}
-                                columns=${visibleColumns}
-                                idKey="id"
-                                plugins=${{sortable: sortablePlugin}}
-                                density="compact"
-                                dividers="rows"
-                                hasHover=${true}
-                                isStriped=${true}
-                                textOverflow="truncate"
-                            />
+                            <div className="table-width">
+                                <${Table}
+                                    data=${visibleRecords}
+                                    columns=${visibleColumns}
+                                    idKey="id"
+                                    plugins=${{sortable: sortablePlugin}}
+                                    density="compact"
+                                    dividers="rows"
+                                    hasHover=${true}
+                                    isStriped=${true}
+                                    textOverflow="truncate"
+                                />
+                            </div>
                         </div>
                         <div className="pagination-row">
                             <span>${paginationSummary}</span>
