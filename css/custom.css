@@ -25,18 +25,21 @@ body {
     overflow-x: hidden;
 }
 
-.page-header a,
+.page-header p a,
 .site-footer a {
     color: var(--site-taupe);
     text-decoration-color: var(--site-mauve);
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
     text-underline-offset: 3px;
 }
 
-.page-header a:hover,
-.page-header a:focus-visible,
+.page-header p a:hover,
+.page-header p a:focus-visible,
 .site-footer a:hover,
 .site-footer a:focus-visible {
     color: var(--site-black);
+    text-decoration-style: solid;
 }
 
 #root:empty::after {

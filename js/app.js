@@ -222,7 +222,7 @@ const TABLE_COLUMNS = [
     {
         key: "heightWithShoes",
         header: "Height w/ shoes",
-        width: pixel(130),
+        width: pixel(120),
         sortable: true,
         renderCell: (record) => record.heightWithShoesDisplay || "N/A",
     },
@@ -799,7 +799,7 @@ function App() {
 
             <footer className="site-footer">
                 <p>
-                    View the source code on
+                    View the source code on${" "}
                     <a href="https://github.com/sdhutchins/nba-draft-combine-anthro">GitHub</a>.
                 </p>
             </footer>
