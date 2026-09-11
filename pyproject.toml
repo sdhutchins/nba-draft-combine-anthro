@@ -1,0 +1,9 @@
+[project]
+name = "nba-draft-combine-anthro"
+version = "0.1.0"
+description = "Download and publish NBA Draft Combine anthropometric data."
+requires-python = ">=3.12"
+dependencies = [
+    "pandas",
+    "requests",
+]
