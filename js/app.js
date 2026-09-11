@@ -88,7 +88,7 @@ function escapeCsvValue(value) {
     return `"${String(value ?? "").replaceAll('"', '""')}"`;
 }
 
-function createDownloadFilename(now = new Date()) {
+function createDownloadFilename(isFiltered, now = new Date()) {
     const timestampParts = [
         now.getFullYear(),
         now.getMonth() + 1,
@@ -97,10 +97,11 @@ function createDownloadFilename(now = new Date()) {
         now.getMinutes(),
         now.getSeconds(),
     ].map((value) => String(value).padStart(2, "0"));
-    return `${timestampParts.join("_")}_nba_combine_anthro_filtered.csv`;
+    const qualifier = isFiltered ? "_filtered" : "";
+    return `${timestampParts.join("_")}_nba_combine_anthro${qualifier}.csv`;
 }
 
-function downloadCsv(records) {
+function downloadCsv(records, isFiltered) {
     if (!records.length) {
         return;
     }
@@ -120,7 +121,7 @@ function downloadCsv(records) {
     );
     const link = document.createElement("a");
     link.href = downloadUrl;
-    link.download = createDownloadFilename();
+    link.download = createDownloadFilename(isFiltered);
     document.body.append(link);
     link.click();
     link.remove();
@@ -653,7 +654,7 @@ function App() {
                         </div>
                         <${Button}
                             label="Download CSV"
-                            onClick=${() => downloadCsv(sortedData)}
+                            onClick=${() => downloadCsv(sortedData, hasActiveFilters)}
                             isDisabled=${!sortedData.length}
                             variant="primary"
                             icon=${html`<${Icon} icon="arrowDown" size="sm" />`}
